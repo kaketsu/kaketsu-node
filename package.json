@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "express": "^4.13.4",
+    "express-generator": "^4.13.1",
     "morgan": "^1.7.0",
     "serve-favicon": "^2.3.0"
   }
