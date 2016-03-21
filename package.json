@@ -1,0 +1,14 @@
+{
+  "name": "kaketsu-node",
+  "version": "0.1.0",
+  "description": "learn node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaketsu/kaketsu-node.git"
+  },
+  "author": "qiuqiu",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}
