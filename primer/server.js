@@ -1,4 +1,4 @@
-/*
+/*************************
 var express = require('express');
 var favicon = require('serve-favicon');
 var fs = require('fs');
@@ -19,6 +19,8 @@ app.listen(1024);
 console.log('Server running at http://127.0.0.1:1024/');
 */
 
+
+
 //***********************
 //使用node中的http模块
 /*var http = require("http");
@@ -31,6 +33,8 @@ http.createServer(function(request, response){
 }).listen(1025);*/
 
 
+
+//***********************
 //使用模块进行封装createrServer
 var server = require('./start');
 server.start();
