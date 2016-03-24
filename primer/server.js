@@ -32,5 +32,29 @@ function start2(route,handle){
 	http.createServer(onRequest).listen(1026);
 }
 
+//进行简单的post请求
+function serverStart(route,handle){
+	http.createServer(function(request, response){
+		var postData = "";
+		var pathname = url.parse(request.url).pathname;
+		console.log("http Request for " +pathname+ "received" );
+
+		request.setEncoding("utf8");
+		request.addListener("data", function(postDataChunk){
+			postData += postDataChunk;
+			console.log("Received POST data chunk '" + postDataChunk + "'." );
+		})
+
+		request.addListener("end",function(){
+			route(handle, pathname,response, postData);
+		})
+
+	}).listen(1027);
+}
+
+
+
 exports.start = start;
 exports.start2 = start2;
+exports.serverStart = serverStart;
+

@@ -40,6 +40,7 @@ var server = require('./server');
 var router = require('./router');
 var requestHandlers = require('./requestHandler');
 var requestHandlers2 = require('./requestHandler2');
+var requestPostHandlers = require('./requestPostHandler');
 
 var handle = {}
 handle["/"] = requestHandlers.start;
@@ -56,7 +57,14 @@ handle2["/"] = requestHandlers2.start;
 handle2["/start"] = requestHandlers2.start;
 handle2["/upload"] = requestHandlers2.upload;
 
-server.start2(router.route2, handle2);
-console.log("Server 2 has started.");
+/*server.start2(router.route2, handle2);
+console.log("Server 2 has started.");*/
 
+var handle3 = {}
+handle3["/"] = requestPostHandlers.start;
+handle3["/start"] = requestPostHandlers.start;
+handle3["/upload"] = requestPostHandlers.upload;
+
+server.serverStart(router.routePost, handle3);
+console.log("Server post has started.");
 
