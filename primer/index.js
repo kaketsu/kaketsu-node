@@ -39,6 +39,7 @@ http.createServer(function(request, response){
 var server = require('./server');
 var router = require('./router');
 var requestHandlers = require('./requestHandler');
+var requestHandlers2 = require('./requestHandler2');
 
 var handle = {}
 handle["/"] = requestHandlers.start;
@@ -46,6 +47,16 @@ handle["/start"] = requestHandlers.start;
 handle["/start2"] = requestHandlers.start2;
 handle["/upload"] = requestHandlers.upload;
 
+/*server.start(router.route, handle);
+console.log("Server has started.");*/
 
-server.start(router.route, handle);
-console.log("Server has started.");
+
+var handle2 = {}
+handle2["/"] = requestHandlers2.start;
+handle2["/start"] = requestHandlers2.start;
+handle2["/upload"] = requestHandlers2.upload;
+
+server.start2(router.route2, handle2);
+console.log("Server 2 has started.");
+
+
