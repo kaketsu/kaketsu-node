@@ -38,6 +38,14 @@ http.createServer(function(request, response){
 //使用模块进行封装createrServer
 var server = require('./server');
 var router = require('./router');
+var requestHandlers = require('./requestHandler');
 
-server.start(router.route);
+var handle = {}
+handle["/"] = requestHandlers.start;
+handle["/start"] = requestHandlers.start;
+handle["/start2"] = requestHandlers.start2;
+handle["/upload"] = requestHandlers.upload;
+
+
+server.start(router.route, handle);
 console.log("Server has started.");
