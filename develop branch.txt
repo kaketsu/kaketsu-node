@@ -1,1 +1,4 @@
 git push --set-upstream origin develop
+
+//可参考的git规范
+http://www.imooc.com/article/6245 
